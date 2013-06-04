@@ -20,7 +20,30 @@ Extra requirements for this exercise:
 -Tha candidate must be willing to answer other questions related with this application via email or skype.
 
 
-Additional notes regarding implementation:
+********************************
+
+Implementation notes:
 
 ********************************
+
+Database structure:
+
+Owners:
+- id. PK
+- name
+- phone
+- email
+- home address
+
+Pets:
+- id. PK
+- owner_id. FK
+- name
+- age
+- pet_type_id. Fk
+
+PetTypes:
+- id. PK
+- description
+
 
