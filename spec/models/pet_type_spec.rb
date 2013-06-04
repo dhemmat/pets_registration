@@ -11,5 +11,8 @@
 require 'spec_helper'
 
 describe PetType do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before { @pet_type = PetType.new(name: "fish") }
+  subject { @pet_type }
+
+  it { should respond_to(:name) } 
 end

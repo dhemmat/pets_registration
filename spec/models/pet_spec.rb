@@ -14,5 +14,10 @@
 require 'spec_helper'
 
 describe Pet do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before { @pet = Pet.new(name: "Example Pet", age: "3") }
+  subject { @pet }
+
+  it { should respond_to(:name) } 
+  it { should respond_to(:age) }
+
 end
