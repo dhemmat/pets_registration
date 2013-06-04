@@ -15,4 +15,9 @@ class Pet < ActiveRecord::Base
   belongs_to :owner
   belongs_to :pet_type
   attr_accessible :age, :name, :pet_type_id, :owner_id
+
+  validates :name, presence: true, length: { maximum:50 }
+  validates :age, presence: true, length: { maximum:50 }
+  validates :pet_type_id, presence: true
+
 end

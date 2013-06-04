@@ -15,4 +15,5 @@ describe PetType do
   subject { @pet_type }
 
   it { should respond_to(:name) } 
+  it { should be_valid }
 end

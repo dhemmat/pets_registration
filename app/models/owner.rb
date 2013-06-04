@@ -14,4 +14,13 @@
 class Owner < ActiveRecord::Base
   attr_accessible :id, :address, :email, :name, :phone
   has_many :pets, :dependent => :destroy
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  VALID_PHONE_REGEX = /[\d() -]+/
+
+
+  validates :name, presence: true, length: { maximum:50 }
+  validates :address, presence: true, length: { maximum:300 }
+  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
+  validates :phone, presence: true, format: { with: VALID_PHONE_REGEX }
+
 end
