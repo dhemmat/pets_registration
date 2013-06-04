@@ -12,5 +12,5 @@
 #
 
 class Owner < ActiveRecord::Base
-  attr_accessible :address, :email, :name, :phone
+  attr_accessible :id, :address, :email, :name, :phone
 end
