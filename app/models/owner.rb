@@ -13,4 +13,5 @@
 
 class Owner < ActiveRecord::Base
   attr_accessible :id, :address, :email, :name, :phone
+  has_many :pets, :dependent => :destroy
 end
