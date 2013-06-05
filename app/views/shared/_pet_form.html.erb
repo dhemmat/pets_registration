@@ -15,9 +15,5 @@
 	    <%= text_field_tag "pet[][name]" %>&nbsp;
 	    <%= select_tag("pet[][pet_type_id]", options_from_collection_for_select(PetType.all, "id", "name"), :prompt => 'Select a pet type') %>
 	
-
-
-		<%= select("pet[t]", "pet_type_id", PetType.all.collect {|p| [ p.name, p.id ] }, {:include_blank => 'Select a pet type'}) %>
-	
 	</div>
 </div>
