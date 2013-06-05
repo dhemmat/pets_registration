@@ -1,11 +1,11 @@
 <% provide(:title, 'Pet Registration') %>
 <h1>Pet Registration</h1>
 <hr>
-<h2 class="form-subtitle">Owners information</h2>
+<h2 class="form-subtitle">Owner information</h2>
 <%= form_for @owner, :url => records_path do |f| %>
 
   <%= render 'shared/owner_form', :f => f %>
-  
+
     <h2 class="form-subtitle">Pet Information</h2>
 
     <label>Number of Pets</label>
