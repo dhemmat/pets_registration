@@ -33,14 +33,15 @@
     	<div id='<%="pet-#{t+1}"%>'> 
     		<h3 class="form-subtitle"><%="Pet No.#{t+1}"%></h3>
 
-			<%= form_for @pet, :url => records_path do |f| %>
+			<%= form_for @pet[t], :url => records_path do |f| %>
 
 			    <%= f.label :name %>&nbsp;
 			    <%= f.label :age %>&nbsp;
+			    <%= f.label :pet_type_id, 'Type of pet'%>
 			    </br>
 			    <%= f.text_field :name %>&nbsp;
 			    <%= f.text_field :age %>&nbsp;
-			    <%= f.text_field :pet_type %>&nbsp;
+			    <%= select("pet[t]", "pet_type_id", PetType.all.collect {|p| [ p.name, p.id ] }, {:include_blank => 'Select a pet type'}) %>
 			<% end %>
     	</div>
     <% end %>
