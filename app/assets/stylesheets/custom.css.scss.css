@@ -149,3 +149,13 @@ label {
 	width: 215px;
 	padding-left: 5px;
 }
+
+.pet-numeration {
+	width: 30px;
+	padding-left: 5px;
+	display: inline-block;
+}
+
+.pet-form-div {
+	display: inline-block;
+}

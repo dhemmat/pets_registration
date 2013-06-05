@@ -23,16 +23,18 @@
     <label>Number of Pets</label>
 	</br>
     <select name="number_of_pets">
-  	  <option value="1" selected="selected">1 Pet</option>
-      <option value="2">2 Pets</option>
-      <option value="3">3 Pets</option>
-      <option value="4">4 Pets</option>
+      <% RecordsHelper::ALLOWED_PETS.times do |t| %>
+  	  	<option value="<%= (t+1) %>" <%= 'selected="selected"' if (t+1)==1 %>><%="#{t+1} Pet"%><%= "s" if (t+1)>1%></option>
+  	  <% end %>
     </select>
 
     <% RecordsHelper::ALLOWED_PETS.times do |t| %>
+    	<hr>
     	<div id='<%="pet-#{t+1}"%>'> 
-    		<h3 class="form-subtitle"><%="Pet No.#{t+1}"%></h3>
-
+    		<div class="pet-numeration"> 
+    			<h3 class="form-subtitle"><%="#{t+1})"%></h3>
+    		</div>
+    		<div class="pet-form-div">
 			<%= form_for @pet[t], :url => records_path do |f| %>
 
 			    <%= f.label :name %>&nbsp;
@@ -43,6 +45,7 @@
 			    <%= f.text_field :age %>&nbsp;
 			    <%= select("pet[t]", "pet_type_id", PetType.all.collect {|p| [ p.name, p.id ] }, {:include_blank => 'Select a pet type'}) %>
 			<% end %>
+			</div>
     	</div>
     <% end %>
 
