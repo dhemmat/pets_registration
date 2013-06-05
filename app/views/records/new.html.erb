@@ -4,20 +4,8 @@
 <h2 class="form-subtitle">Owners information</h2>
 <%= form_for @owner, :url => records_path do |f| %>
 
-  <%= render 'shared/owner_error_messages' %>
-
-    <%= f.label :name %>&nbsp;
-    <%= f.label :phone %>&nbsp;
-   	<%= f.label :email %>&nbsp;
-    <%= f.label :address %>&nbsp;
-    </br>
-    <%= f.text_field :name %>&nbsp;
-    <%= f.text_field :phone %>&nbsp;
-    <%= f.text_field :email %>&nbsp;
-    <%= f.text_field :address %>&nbsp;
-
-    <hr>
-
+  <%= render 'shared/owner_form', :f => f %>
+  
     <h2 class="form-subtitle">Pet Information</h2>
 
     <label>Number of Pets</label>
@@ -28,26 +16,10 @@
   	  <% end %>
     </select>
 
-    <% RecordsHelper::ALLOWED_PETS.times do |t| %>
-    	<div id='<%="pet-#{t+1}"%>'>
-    	<%= render 'shared/pet_error_messages', :t => t %> 
-    		<hr>
-    		<div class="pet-numeration"> 
-    			<h3 class="form-subtitle"><%="#{t+1})"%></h3>
-    		</div>
-    		<div class="pet-form-div">
-			<%= form_for @pet[t], :url => records_path do |f| %>
-
-			    <%= f.label :name %>&nbsp;
-			    <%= f.label :age %>&nbsp;
-			    <%= f.label :pet_type_id, 'Type of pet'%>
-			    </br>
-			    <%= f.text_field :name %>&nbsp;
-			    <%= f.text_field :age %>&nbsp;
-			    <%= select("pet[t]", "pet_type_id", PetType.all.collect {|p| [ p.name, p.id ] }, {:include_blank => 'Select a pet type'}) %>
-			<% end %>
-			</div>
-    	</div>
+    <%= form_for @pet[0], :url => records_path do |f2| %>
+	    <% RecordsHelper::ALLOWED_PETS.times do |t| %>
+	    	<%= render 'shared/pet_form', :t => t, :f2 => f2 %>
+	    <% end %>
     <% end %>
 
 	</br>
