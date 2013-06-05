@@ -10,7 +10,13 @@ class RecordsController < ApplicationController
   
   def create
   	@owner = Owner.new(params[:owner])
-	if @owner.save
+  	params[:number_of_pets].to_i.times do |t|
+  		@pet[t] = Pet.new(params[:]) 
+  	end
+
+
+
+	if (@owner.save && (@pet.all { |t| t.valid? })
   	  flash[:success] = "Data saved successfully"
   	  redirect_to @user
     else
