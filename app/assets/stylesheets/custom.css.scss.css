@@ -120,7 +120,7 @@ margin-right: 10px;
 /* forms */
 input, textarea, select, .uneditable-input {
 border: 1px solid #bbb;
-width: 100%;
+width: 200px;
 padding: 10px;
 height: auto;
 margin-bottom: 15px;
@@ -138,4 +138,14 @@ margin: 0 0 18px 0;
 .field_with_errors {
 @extend .control-group;
 @extend .error;
+}
+
+.form-subtitle {
+	text-align: left;
+}
+
+label {
+	display: inline-block;
+	width: 215px;
+	padding-left: 5px;
 }

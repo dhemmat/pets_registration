@@ -1,7 +1,11 @@
 class RecordsController < ApplicationController
-  
+
   def new
 	@owner = Owner.new
+	@pet = Array.new
+	RecordsHelper::ALLOWED_PETS.times do |t| 
+		@pet[t] = Pet.new 
+	end
   end
   
   def create

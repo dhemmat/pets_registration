@@ -1,17 +1,51 @@
 <% provide(:title, 'Pet Registration') %>
 <h1>Pet Registration</h1>
+<hr>
+<h2 class="form-subtitle">Owners information</h2>
 <%= form_for @owner, :url => records_path do |f| %>
 
   <%= render 'shared/owner_error_messages' %>
 
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-   	<%= f.label :phone %>
-    <%= f.text_field :phone %>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-    <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+    <%= f.label :name %>&nbsp;
+    <%= f.label :phone %>&nbsp;
+   	<%= f.label :email %>&nbsp;
+    <%= f.label :address %>&nbsp;
+    </br>
+    <%= f.text_field :name %>&nbsp;
+    <%= f.text_field :phone %>&nbsp;
+    <%= f.text_field :email %>&nbsp;
+    <%= f.text_field :address %>&nbsp;
+
+    <hr>
+
+    <h2 class="form-subtitle">Pet Information</h2>
+
+    <label>Number of Pets</label>
+	</br>
+    <select name="number_of_pets">
+  	  <option value="1" selected="selected">1 Pet</option>
+      <option value="2">2 Pets</option>
+      <option value="3">3 Pets</option>
+      <option value="4">4 Pets</option>
+    </select>
+
+    <% RecordsHelper::ALLOWED_PETS.times do |t| %>
+    	<div id='<%="pet-#{t+1}"%>'> 
+    		<h3 class="form-subtitle"><%="Pet No.#{t+1}"%></h3>
+
+			<%= form_for @pet, :url => records_path do |f| %>
+
+			    <%= f.label :name %>&nbsp;
+			    <%= f.label :age %>&nbsp;
+			    </br>
+			    <%= f.text_field :name %>&nbsp;
+			    <%= f.text_field :age %>&nbsp;
+			    <%= f.text_field :pet_type %>&nbsp;
+			<% end %>
+    	</div>
+    <% end %>
+
+	</br>
+    <%= f.submit "Register pets", class: "btn bt1n-large btn-primary" %>
 
 <% end %>
