@@ -1,12 +1,14 @@
-<% if @pet[t].errors.any? %>
-	<div id="error_explanation">
-		<div class="alert alert-error">
-			The form contains <%= pluralize(@owner.errors.count, "error") %>.
+<% unless @pet[t].nil? %>
+	<% if @pet[t].errors.any? %>
+		<div id="error_explanation">
+			<div class="alert alert-error">
+				The form contains <%= pluralize(@pet[t].errors.count, "error") %>.
+			</div>
+			<ul>
+			<% @pet[t].errors.full_messages.each do |msg| %>
+				<li>* <%= msg %></li>
+			<% end %>
+			</ul>
 		</div>
-		<ul>
-		<% @owner.errors.full_messages.each do |msg| %>
-			<li>* <%= msg %></li>
-		<% end %>
-		</ul>
-	</div>
+	<% end %>
 <% end %>
