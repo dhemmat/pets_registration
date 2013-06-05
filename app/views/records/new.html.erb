@@ -1,2 +1,17 @@
 <% provide(:title, 'Pet Registration') %>
 <h1>Pet Registration</h1>
+<%= form_for @owner, :url => records_path do |f| %>
+
+  <%= render 'shared/owner_error_messages' %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+   	<%= f.label :phone %>
+    <%= f.text_field :phone %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+    <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+
+<% end %>

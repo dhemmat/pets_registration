@@ -21,6 +21,6 @@ class Owner < ActiveRecord::Base
   validates :name, presence: true, length: { maximum:50 }
   validates :address, presence: true, length: { maximum:300 }
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
-  validates :phone, presence: true, format: { with: VALID_PHONE_REGEX }
+  validates :phone, presence: true, format: { with: VALID_PHONE_REGEX, :message => 'is invalid. Please use this format: "(XXX)-XXX-XXXX"' } 
 
 end
