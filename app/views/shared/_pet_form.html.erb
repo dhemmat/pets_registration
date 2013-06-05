@@ -11,9 +11,13 @@
 	    <%= f2.label :age %>&nbsp;
 	    <%= f2.label :pet_type_id, 'Type of pet'%>
 	    </br>
-	    <%= f2.text_field :name %>&nbsp;
-	    <%= f2.text_field :age %>&nbsp;
-	    <%= select("pet[t]", "pet_type_id", PetType.all.collect {|p| [ p.name, p.id ] }, {:include_blank => 'Select a pet type'}) %>
+	    <%= text_field_tag "pet[][name]" %>&nbsp;
+	    <%= text_field_tag "pet[][name]" %>&nbsp;
+	    <%= select_tag("pet[][pet_type_id]", options_from_collection_for_select(PetType.all, "id", "name"), :prompt => 'Select a pet type') %>
+	
+
+
+		<%= select("pet[t]", "pet_type_id", PetType.all.collect {|p| [ p.name, p.id ] }, {:include_blank => 'Select a pet type'}) %>
 	
 	</div>
 </div>
