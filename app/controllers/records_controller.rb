@@ -25,7 +25,7 @@ class RecordsController < ApplicationController
 	  @pet_storage = Array.new
 	  @pet_number_storage = 1
   	  flash[:success] = "Data saved successfully"
-  	  redirect_to @user  #FIX THIS
+  	  redirect_to record_path(@owner)
     else
       @pet_storage = @pet
       @pet_number_storage = params[:number_of_pets]
