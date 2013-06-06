@@ -15,11 +15,12 @@
     													params[:number_of_pets])) %>
 
     <%= form_for @pet[0], :url => records_path do |f2| %>
+
 	    <% RecordsHelper::ALLOWED_PETS.times do |t| %>
 	    	<%= render 'shared/pet_form', :t => t, :f2 => f2 %>
 	    <% end %>
 
-    <%= submit_tag("Submit", class: "btn bt1n-large btn-primary") %>
+    	<%= submit_tag("Submit", class: "btn bt1n-large btn-primary") %>
 
     <% end %>
 
