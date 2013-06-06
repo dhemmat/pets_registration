@@ -12,8 +12,9 @@
 	    <%= f2.label :age %>&nbsp;
 	    <%= f2.label :pet_type_id, 'Type of pet'%>
 	    </br>
-	    <%= text_field_tag "pet[][name]", @pet[t].name %>&nbsp;
-	    <%= text_field_tag "pet[][age]", @pet[t].age %>&nbsp;
-	    <%= select_tag("pet[][pet_type_id]", options_from_collection_for_select(PetType.all, "id", "name", @pet[t].pet_type_id), :prompt => 'Select a pet type') %>
+	    <%= text_field_tag "pet[][name]", @pet_storage[t].try(:name) %>&nbsp;
+	    <%= text_field_tag "pet[][age]", @pet_storage[t].try(:age) %>&nbsp;
+	    <%= select_tag("pet[][pet_type_id]", options_from_collection_for_select(PetType.all, "id", "name", 
+	    				@pet_storage[t].try(:pet_type_id)), :prompt => 'Select a pet type') %>
 	</div>
 </div>
