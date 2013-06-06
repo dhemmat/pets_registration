@@ -6,6 +6,7 @@ class RecordsController < ApplicationController
 	RecordsHelper::ALLOWED_PETS.times do |t| 
 		@pet[t] = Pet.new 
 	end
+
   end
   
   def create
