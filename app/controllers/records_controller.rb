@@ -31,5 +31,11 @@ class RecordsController < ApplicationController
       @pet_number_storage = params[:number_of_pets]
       render 'new'
     end
+
+    def show
+      
+    end
+
+
   end
 end

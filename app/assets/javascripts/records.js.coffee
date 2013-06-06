@@ -10,7 +10,7 @@ show_pet_forms = (pets_selected, pets_allowed) ->
     element_id = "pet-" + i
     document.getElementById(element_id).style.visibility = "visible"
     document.getElementById(element_id).style.display = "block"
-    i++
+    i++;
   i = (pets_selected + 1)
 
   while i <= pets_allowed
