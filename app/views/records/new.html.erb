@@ -3,29 +3,19 @@
 <hr>
 <h2 class="left-subtitle">Owner information</h2>
 <%= form_for @owner, :url => records_path do |f| %>
-
   <%= render 'shared/owner_form', :f => f %>
-
     <h2 class="left-subtitle">Pet Information</h2>
-
     <label>Number of pets</label>
 	</br>
-    
     <%= select_tag "number_of_pets", options_for_select(allowed_pets_options, @pet_number_storage), onchange:"show_pet_forms(this.value, #{RecordsHelper::ALLOWED_PETS});" %>
-
     <%= form_for @pet[0], :url => records_path do |f2| %>
-
 	    <% RecordsHelper::ALLOWED_PETS.times do |t| %>
 	    	<%= render 'shared/pet_form', :t => t, :f2 => f2 %>
 	    <% end %>
-
 	    <hr>
 	    <div class="center">
     		<%= submit_tag("Submit", class: "btn bt1n-large btn-primary") %>
     	</div>
     <% end %>
-
 	</br>
-    
-
 <% end %>

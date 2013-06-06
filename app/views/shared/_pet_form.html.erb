@@ -1,13 +1,10 @@
 <div id='<%="pet-#{t+1}"%>' class="pet-block<%= '-first' if (t+1)==1 %>">
-
 	<hr>
 	<%= render 'shared/pet_error_messages', :t => t %> 
 	<div class="pet-numeration"> 
 		<h3 class="form-subtitle"><%="#{t+1})"%></h3>
 	</div>
 	<div class="pet-form-div">
-	
-
 	    <%= f2.label :name %>&nbsp;
 	    <%= f2.label :age %>&nbsp;
 	    <%= f2.label :pet_type_id, 'Type of pet'%>

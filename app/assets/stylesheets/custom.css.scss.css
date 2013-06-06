@@ -169,15 +169,17 @@ label {
 }
 
 dt {
-	display: inline-block;
+	display: inline;
 	font-size: 1.3em;
 	line-height: 2em;
+	width: 80px;
 }
 
 dd {
 	display: inline-block;
 	font-size: 1.3em;
 	line-height: 2em;
+	width: 150px;
 }
 
 .center {

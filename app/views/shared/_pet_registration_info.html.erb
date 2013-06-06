@@ -8,11 +8,11 @@
 			<div class="pet-info-div">
 				<dl>
 			  		<dt>Name:</dt>
-			    		<dd id="pet-<%= "#{t+1}" %>-name"><%= @pet[t].name %></dd></br>
+			    		<dd id="pet-<%= "#{t+1}" %>-name"><%= @pet[t].name %></dd>
 			    	<dt>Age:</dt>
-			    		<dd id="pet-<%= "#{t+1}" %>-age"><%= @pet[t].age %></dd></br>
+			    		<dd id="pet-<%= "#{t+1}" %>-age"><%= @pet[t].age %></dd>
 			    	<dt>Pet type:</dt>
-			    		<dd id="pet-<%= "#{t+1}" %>-type"><%= (PetType.where("id = ?", @pet[t].pet_type_id))[0].name %></dd></br>
+			    		<dd id="pet-<%= "#{t+1}" %>-type"><%= (PetType.where("id = ?", @pet[t].pet_type_id))[0].name %></dd>
 				</dl>
 			</div>
 		</div>
