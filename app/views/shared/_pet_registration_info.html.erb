@@ -1,0 +1,16 @@
+<div id='<%="pet-#{t+1}"%>' class="pet-block<%= '-first' if (t+1)==1 %>">
+	<hr> 
+	<div class="pet-numeration"> 
+		<h3 class="form-subtitle"><%="#{t+1})"%></h3>
+	</div>
+	<div class="pet-info-div">
+	    <%= f2.label :name %>&nbsp;
+	    <%= f2.label :age %>&nbsp;
+	    <%= f2.label :pet_type_id, 'Type of pet'%>
+	    </br>
+	    <%= text_field_tag "pet[][name]", @pet_storage[t].try(:name) %>&nbsp;
+	    <%= text_field_tag "pet[][age]", @pet_storage[t].try(:age) %>&nbsp;
+	    <%= select_tag("pet[][pet_type_id]", options_from_collection_for_select(PetType.all, "id", "name", 
+	    				@pet_storage[t].try(:pet_type_id)), :prompt => 'Select a pet type') %>
+	</div>
+</div>

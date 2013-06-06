@@ -142,7 +142,7 @@ display: inline-block;
 width: 215px;
 }
 
-.form-subtitle {
+.left-subtitle {
 	text-align: left;
 }
 
@@ -151,24 +151,31 @@ label {
 	width: 215px;
 	padding-left: 5px;
 }
-
 .pet-numeration {
 	width: 30px;
 	padding-left: 5px;
 	display: inline-block;
 }
-
-.pet-form-div {
+.pet-form-div, .pet-info-div{
 	display: inline-block;
 }
-
 .pet-block {
 	display: none;
 	visibility: hidden;
 }
-
-
-.pet-block-fisrt {
+.pet-block-first {
 	display: block;
 	visibility: visible;
+}
+
+dt {
+	display: inline-block;
+	font-size: 1.3em;
+	line-height: 2em;
+}
+
+dd {
+	display: inline-block;
+	font-size: 1.3em;
+	line-height: 2em;
 }

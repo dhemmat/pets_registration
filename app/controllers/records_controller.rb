@@ -10,6 +10,8 @@ class RecordsController < ApplicationController
 	@pet_number_storage = 1 unless defined?(@pet_number_storage)  
   end
   
+
+
   def create
   	@owner = Owner.new(params[:owner])
   	@pet = Array.new
@@ -31,11 +33,15 @@ class RecordsController < ApplicationController
       @pet_number_storage = params[:number_of_pets]
       render 'new'
     end
-
-    def show
-      
-    end
-
-
   end
+
+
+
+
+  def show
+      @owner = Owner.find_by_id(params[:id])
+      @pets[]= Array.new
+  end
+
+
 end
