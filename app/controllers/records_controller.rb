@@ -42,6 +42,12 @@ class RecordsController < ApplicationController
   def show
       @owner = Owner.find_by_id(params[:id])
       @pet = Pet.where("owner_id = ?", params[:id])
+      @json_response = @owner
+      @json_response[:pets_owned] = @pet
+      respond_to do |format|
+      	format.html
+      	format.json {render json:@json_response}
+      end
   end
 
 
