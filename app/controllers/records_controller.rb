@@ -35,12 +35,9 @@ class RecordsController < ApplicationController
     end
   end
 
-
-
-
   def show
       @owner = Owner.find_by_id(params[:id])
-      @pets[]= Array.new
+      @pet = Pet.where("owner_id = ?", params[:id])
   end
 
 
