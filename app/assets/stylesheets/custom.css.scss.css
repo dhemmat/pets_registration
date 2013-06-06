@@ -161,3 +161,14 @@ label {
 .pet-form-div {
 	display: inline-block;
 }
+
+.pet-block {
+	display: none;
+	visibility: hidden;
+}
+
+
+.pet-block-fisrt {
+	display: block;
+	visibility: visible;
+}

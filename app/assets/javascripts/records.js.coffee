@@ -2,18 +2,19 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-`show_pet_forms = function(pets_selected, pets_allowed) {
-	
-	for (var i=1;i<=pets_selected;i++)
-	{ 
-		element_id = "pet-" + i;
-		document.getElementById(element_id).style.visibility = "visible";
-	    document.getElementById(element_id).style.display = "block";
-	}
-	for (var i=(pets_selected+1);i<=pets_allowed;i++)
-	{ 
-		element_id = "pet-" + i;
-		document.getElementById(element_id).style.visibility = "hidden";
-	    document.getElementById(element_id).style.display = "none";
-	}
-};`
+show_pet_forms = (pets_selected, pets_allowed) ->
+  console.log "Test"
+  i = 1
+
+  while i <= pets_selected
+    element_id = "pet-" + i
+    document.getElementById(element_id).style.visibility = "visible"
+    document.getElementById(element_id).style.display = "block"
+    i++
+  i = (pets_selected + 1)
+
+  while i <= pets_allowed
+    element_id = "pet-" + i
+    document.getElementById(element_id).style.visibility = "hidden"
+    document.getElementById(element_id).style.display = "none"
+    i++
