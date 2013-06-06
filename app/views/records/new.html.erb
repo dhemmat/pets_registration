@@ -8,11 +8,10 @@
 
     <h2 class="form-subtitle">Pet Information</h2>
 
-    <label>Number of Pets</label>
+    <label>Number of pets</label>
 	</br>
     
-    <% select_tag("number_of_pets", options_for_select([['test','1'],['puchi','2']], 
-    													params[:number_of_pets])) %>
+    <%= select_tag "number_of_pets", options_for_select(allowed_pets_options) %>
 
     <%= form_for @pet[0], :url => records_path do |f2| %>
 

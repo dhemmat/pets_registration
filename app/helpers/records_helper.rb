@@ -4,9 +4,9 @@ module RecordsHelper
   def allowed_pets_options
   	(1..ALLOWED_PETS).map do |t|
   	  if (t>1)
-  	  	text = 'Pets'
+  	  	text = "#{t} Pets"
   	  else
-  	  	text = 'Pet'
+  	  	text = "#{t} Pet"
   	  end
   	  [text,t]
   	end
