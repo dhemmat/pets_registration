@@ -11,7 +11,7 @@
     <label>Number of pets</label>
 	</br>
     
-    <%= select_tag "number_of_pets", options_for_select(allowed_pets_options) %>
+    <%= select_tag "number_of_pets", options_for_select(allowed_pets_options, @pet_number_storage) %>
 
     <%= form_for @pet[0], :url => records_path do |f2| %>
 
