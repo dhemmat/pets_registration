@@ -15,6 +15,21 @@ Important notes:
 
 <h2>Implementation notes</h2>
 
+<h3>Functionality</h3>
+- Form for storing information for clients and their pets.
+- Each client must have at least 1 pet and a maximum of 4 pets.
+- Client information: name, phone, email, address.
+- Pet information: name, age, pet type
+- Valid pet types are: dog, cat, bird, other.
+- After the form saves the data, a confirmation page is shown with all the information saved, including internal ID.
+- There is a webservice that can return the data for any record (a client and his pets) in JSON format.
+
+<h3>Aditional requirements</h3>
+- The information is stored on a database (PostresSQL in production)
+- The URL used to retrieve the data in JSON format contains the internal registration ID ('/records/2.json').
+- The site is hosted on Heroku at the address given at the beginning of the document.
+- Source code is available for download.
+
 <h3>Database structure:</h3>
 
 Owners:
