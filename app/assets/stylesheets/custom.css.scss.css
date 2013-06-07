@@ -163,7 +163,7 @@ label {
 	display: none;
 	visibility: hidden;
 }
-.pet-block-first {
+.pet-block-visible {
 	display: block;
 	visibility: visible;
 }

@@ -1,4 +1,4 @@
-<div id='<%="pet-#{t+1}"%>' class="pet-block<%= '-first' if (t+1)==1 %>">
+<div id='<%="pet-#{t+1}"%>' class="pet-block<%= '-visible' if (t+1)<=@pet_number_storage.to_i %>">
 	<hr>
 	<%= render 'shared/pet_error_messages', :t => t %> 
 	<div class="pet-numeration"> 
