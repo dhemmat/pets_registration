@@ -37,13 +37,20 @@ class RecordsController < ApplicationController
   end
 
   def show
-      @owner = Owner.find_by_id(params[:id])
+    @owner = Owner.find_by_id(params[:id])
+    if @owner.nil?
+      respond_to do |format|
+        format.html
+        format.json { render :json => {error: "This record does not exist"}.to_json }
+      end
+    else
       @pet = Pet.where("owner_id = ?", params[:id])
       @json_response = format_json_show
       respond_to do |format|
       	format.html
       	format.json { render :json => @json_response.to_json }
       end
+    end
   end
 
   def format_json_show

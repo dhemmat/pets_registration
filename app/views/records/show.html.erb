@@ -1,12 +1,18 @@
-<% provide(:title, 'Pet Registration') %>
-<h1>Registered information</h1>
-<hr>
-<h2 class="left-subtitle">Personal information</h2>
-<%= render 'shared/owner_registration_info' %>
-<hr>
-<h2 class="left-subtitle">Pets owned</h2>
-<%= render 'shared/pet_registration_info' %>
-<hr>
-<div class="center">
-	<%= link_to "Create another record", root_path, class: "btn btn-large btn-primary" %>
-</div>
+<% if @owner.nil? %>
+	<% provide(:title, 'Pet Registration: Record does not exist') %>
+	<h1>Sorry, this record does not exist</h1>
+	<h2>Please try searching for another record</h2>
+<% else %>
+	<% provide(:title, 'Pet Registration') %>
+	<h1>Registered information</h1>
+	<hr>
+	<h2 class="left-subtitle">Personal information</h2>
+	<%= render 'shared/owner_registration_info' %>
+	<hr>
+	<h2 class="left-subtitle">Pets owned</h2>
+	<%= render 'shared/pet_registration_info' %>
+	<hr>
+	<div class="center">
+		<%= link_to "Create another record", root_path, class: "btn btn-large btn-primary" %>
+	</div>
+<% end %>
