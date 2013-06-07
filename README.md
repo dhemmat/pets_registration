@@ -50,6 +50,44 @@ PetTypes:
 - id. PK
 - name
 
+<h3>JSON response structure</h3>
+
+Valid record ID:
+
+{
+    "id": 3,
+    "name": "Pedro Hernandez",
+    "email": "pedro@gmail.com",
+    "phone": "(809)-254-5152",
+    "address": "Sabana de la cobija, Republica Dominicana",
+    "pets_owned": [
+        {
+            "name": "Bloop",
+            "age": "3 weeks",
+            "pet_type": "Fish"
+        },
+        {
+            "name": "Muffin",
+            "age": "2 years",
+            "pet_type": "Other"
+        },
+        {
+            "name": "Eve",
+            "age": "3 months",
+            "pet_type": "Cat"
+        },
+        {
+            "name": "Lily",
+            "age": "2 months",
+            "pet_type": "Cat"
+        }
+    ]
+}
+
+Invalid record ID:
+
+{"error":"This record does not exist"}
+
 
 
 
