@@ -42,68 +42,68 @@ pet_types = PetType.create([{ name:"Dog" },{ name:"Cat" },{ name:"Fish" },{ name
 
 pets = Pet.create([
 	{
-	  name: "Fluffy"
-	  age: "2 Weeks"
-	  pet_type_id: "2"
+	  name: "Fluffy",
+	  age: "2 Weeks",
+	  pet_type_id: "2",
 	  owner_id:"1"
 	},
 	{
-	  name: "Pinky"
-	  age: "1 Year"
-	  pet_type_id: "1"
+	  name: "Pinky",
+	  age: "1 Year",
+	  pet_type_id: "1",
 	  owner_id:"1"
 	},
 	{
-	  name: "Chewy"
-	  age: "2 Years"
-	  pet_type_id: "3"
+	  name: "Chewy",
+	  age: "2 Years",
+	  pet_type_id: "3",
 	  owner_id:"1"
 	},
 	{
-	  name: "Fuzzy"
-	  age: "2 Months"
-	  pet_type_id: "1"
+	  name: "Fuzzy",
+	  age: "2 Months",
+	  pet_type_id: "1",
 	  owner_id:"2"
 	},
 	{
-	  name: "Stripes"
-	  age: "5 Years"
-	  pet_type_id: "4"
+	  name: "Stripes",
+	  age: "5 Years",
+	  pet_type_id: "4",
 	  owner_id:"3"
 	},
 	{
-	  name: "Yelpy"
-	  age: "4 Years"
-	  pet_type_id: "1"
+	  name: "Yelpy",
+	  age: "4 Years",
+	  pet_type_id: "1",
 	  owner_id:"3"
 	},
 	{
-	  name: "Oinky"
-	  age: "7 Months"
-	  pet_type_id: "4"
+	  name: "Oinky",
+	  age: "7 Months",
+	  pet_type_id: "4",
 	  owner_id:"4"
 	},
 	{
-	  name: "Pooch"
-	  age: "2 Years"
-	  pet_type_id: "1"
+	  name: "Pooch",
+	  age: "2 Years",
+	  pet_type_id: "1",
 	  owner_id:"5"
 	},
 	{
-	  name: "Kitty"
-	  age: "1 Year"
-	  pet_type_id: "2"
+	  name: "Kitty",
+	  age: "1 Year",
+	  pet_type_id: "2",
 	  owner_id:"5"
 	},
 	{
-	  name: "Blubbles"
-	  age: "6 Months"
-	  pet_type_id: "3"
+	  name: "Blubbles",
+	  age: "6 Months",
+	  pet_type_id: "3",
 	  owner_id:"5"
 	},
 	{
-	  name: "Slithery"
-	  age: "8 Months"
-	  pet_type_id: "4"
+	  name: "Slithery",
+	  age: "8 Months",
+	  pet_type_id: "4",
 	  owner_id:"5"
 	}])
