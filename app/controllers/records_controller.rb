@@ -1,6 +1,8 @@
 class RecordsController < ApplicationController
 
-  	
+  def index
+    redirect_to root_path
+  end
 
   def new
 	@owner = Owner.new
@@ -9,8 +11,6 @@ class RecordsController < ApplicationController
 	@pet_storage = Array.new unless defined?(@pet_storage)
 	@pet_number_storage = 1 unless defined?(@pet_number_storage)  
   end
-  
-
 
   def create
   	@owner = Owner.new(params[:owner])
@@ -53,11 +53,11 @@ class RecordsController < ApplicationController
     end
   end
 
+
   def format_json_show
   	@response = { id:@owner.id, name: @owner.name, email: @owner.email, phone:@owner.phone, address:@owner.address }
   	@response[:pets_owned] = @pet.map { |hash| { name: hash[:name], age: hash[:age], pet_type: (PetType.where("id = ?", hash[:pet_type_id])[0].name) }}
   	@response
   end 
-
 
 end

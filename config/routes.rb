@@ -2,6 +2,7 @@ PetsApp::Application.routes.draw do
   
   root to: 'records#new'
   resources :records
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

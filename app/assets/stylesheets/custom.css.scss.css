@@ -151,14 +151,17 @@ label {
 	width: 215px;
 	padding-left: 5px;
 }
+
 .pet-numeration {
 	width: 30px;
 	padding-left: 5px;
 	display: inline-block;
 }
+
 .pet-form-div, .pet-info-div{
 	display: inline-block;
 }
+
 .pet-block {
 	display: none;
 	visibility: hidden;
