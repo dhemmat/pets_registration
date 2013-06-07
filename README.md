@@ -64,7 +64,7 @@ Valid record ID:
         {
             "name": "Bloop",
             "age": "3 weeks",
-            "pet_type": "Fish"
+            "pet_type": "Bird"
         },
         {
             "name": "Muffin",

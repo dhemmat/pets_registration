@@ -38,7 +38,7 @@ owners = Owner.create([
     address:"Embrujo 8, Calle 8, No. 88, Santiago"
   }])
 
-pet_types = PetType.create([{ name:"Dog" },{ name:"Cat" },{ name:"Fish" },{ name:"Other" }])
+pet_types = PetType.create([{ name:"Dog" },{ name:"Cat" },{ name:"Bird" },{ name:"Other" }])
 
 pets = Pet.create([
   {

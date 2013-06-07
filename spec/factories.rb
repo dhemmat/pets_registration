@@ -9,7 +9,7 @@ end
 
 FactoryGirl.define do
   factory :pet_type do
-	name "Fish"
+	name "Bird"
   end
 end
 
