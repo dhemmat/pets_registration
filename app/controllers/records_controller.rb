@@ -36,19 +36,21 @@ class RecordsController < ApplicationController
 
   end
 
-
-
-
   def show
       @owner = Owner.find_by_id(params[:id])
       @pet = Pet.where("owner_id = ?", params[:id])
-      @json_response = @owner
-      @json_response[:pets_owned] = @pet
+      @json_response = format_json_show
       respond_to do |format|
       	format.html
-      	format.json {render json:@json_response}
+      	format.json { render :json => @json_response.to_json }
       end
   end
+
+  def format_json_show
+  	@response = { id:@owner.id, name: @owner.name, email: @owner.email, phone:@owner.phone, address:@owner.address }
+  	@response[:pets_owned] = @pet.map { |hash| { name: hash[:name], age: hash[:age], pet_type: (PetType.where("id = ?", hash[:pet_type_id])[0].name) }}
+  	@response
+  end 
 
 
 end
