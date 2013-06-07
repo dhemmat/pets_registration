@@ -3,14 +3,13 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 show_pet_forms = (pets_selected, pets_allowed) ->
-  console.log "Test"
   i = 1
 
   while i <= pets_selected
     element_id = "pet-" + i
     document.getElementById(element_id).style.visibility = "visible"
     document.getElementById(element_id).style.display = "block"
-    i++;
+    i++
   i = (parseInt(pets_selected) + 1)
 
   while i <= pets_allowed
