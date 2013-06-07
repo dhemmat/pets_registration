@@ -10,16 +10,6 @@ describe "Record pages" do
   	it { should have_selector('h1', text:'Pet Registration') }
   	it { should have_selector('title', text:'Pet Registration') }
 
-		#describe "#when registering" do
-		#	before { visit new_record_path } 
-		#	describe "#with invalid information" do
-		#		describe "#should not modify database" do
-		#			subject { -> { click_button submit } }
-  		#			it { should_not change(Pet, :count) }
-  		#			it { should_not change(Owner, :count) }
-		#		end
-		#	end
-		#end
   end
 
   describe "#show registered information page" do
@@ -34,12 +24,6 @@ describe "Record pages" do
 	it { should have_selector('h1', text:'Sorry, this record does not exist') }
 	it { should have_selector('title', text:'Pet Registration: Record does not exist') }
 
-			#describe "#JSON response" do
-			#	it "should return an error JSON message" do
-			#		get :show, owner # replace with action name / params as necessary
-			#		response.body.should == '{"error":"This record does not exist"}'
-			#	end
-			#end
 	end
 
 	describe "# With valid record" do
